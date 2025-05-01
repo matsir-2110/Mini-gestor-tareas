@@ -9,4 +9,4 @@ El programa creado tiene como fin que el usuario pueda:
             
             . Eliminar una tarea
             
-            . Listar todas las tareas (Estado: Completada/Pendiente)
+            . Listar todas las tareas
