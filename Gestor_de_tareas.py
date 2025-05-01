@@ -29,7 +29,7 @@ def agregado():
     while numero in tarea:
         numero += 1
     
-    tarea[numero] = {"texto": nueva_tarea, "descripcion": descripcion, "Estado": "Pendiente"}
+    tarea[numero] = {"Tarea": nueva_tarea, "Descripcion": descripcion, "Estado": "Pendiente"}
     print("Tarea agregada")
 
 # Función para cambiar el estado de las tareas
@@ -76,9 +76,8 @@ def menus():
     if menu == 'listado':
         listado()
 
-menus()
-
-# Opción para volver al menú
-opcion2 = input("¿Desea volver a seleccionar alguna de las opciones anteriores? ").lower()
-if opcion2 == 'si':
+while True:
     menus()
+    opcion2 = input("¿Desea volver a seleccionar alguna de las opciones anteriores? ").lower()
+    if opcion2 != 'si':
+        break
