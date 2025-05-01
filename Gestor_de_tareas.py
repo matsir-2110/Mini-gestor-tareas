@@ -1,3 +1,4 @@
+# Diccionario con tareas previamente escritas
 tarea = {
     1: {"Tarea": "Estudiar para los parciales de la semana que viene", "Descripcion": "", "Completada": "Pendiente"},
     2: {"Tarea": "Ir al gimnasio todos los dias", "Descripcion": "", "Completada": "Pendiente"},
@@ -5,6 +6,7 @@ tarea = {
     4: {"Tarea": "Practicar tiros al arco de futbol", "Descripcion": "", "Completada": "Pendiente"}
 }
 
+# Función para agregar tareas y descripciones 
 def agregado():
     nueva_tarea = input("Escriba la tarea que desea agregar:  ")
     opcion = input("¿Desea agregar alguna descripcion? ").lower()
@@ -27,6 +29,7 @@ def agregado():
 #def eliminado():
     # Agregar prox
 
+# Función para mostrar por pantalla la tarea, su descripción y estado
 def listado():
     i = 1
     for i, datos in tarea.items():
@@ -36,6 +39,7 @@ def listado():
         print("Estado: ", datos['Completada'])
         print("")
 
+#Función que muestra el menú de opciones
 def menus():
     print("\nMenu de tareas. Seleccione que desea hacer:")
     print("Agregar una tarea con descripción (AGREGAR)")
@@ -52,8 +56,10 @@ def menus():
     #    eliminado()
     if menu == 'listado':
         listado()
+
 menus()
 
+# Opción para volver al menú
 opcion2 = input("¿Desea volver a seleccionar alguna de las opciones anteriores? ").lower()
 if opcion2 == 'si':
     menus()
