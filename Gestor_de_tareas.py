@@ -20,14 +20,16 @@ def agregado():
     while numero in tarea:
         numero += 1
     
-    tarea[numero] = {"texto": nueva_tarea, "descripcion": descripcion, "completada": False}
+    tarea[numero] = {"texto": nueva_tarea, "descripcion": descripcion, "completada": "Pendiente"}
     print("Tarea agregada")
 
 #def marcado():
     # Agregar prox
 
-#def eliminado():
-    # Agregar prox
+def eliminado():
+    opcion = input("¿Desea eliminar alguna tarea? ").lower()
+    if opcion == 'si':
+        opcion_n = input("¿Que tarea desea eliminar?")
 
 # Función para mostrar por pantalla la tarea, su descripción y estado
 def listado():
