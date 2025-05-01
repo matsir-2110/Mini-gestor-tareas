@@ -13,10 +13,6 @@ etiqueta_titulo = tkinter.Label(ventana,
                                 font = ("Arial", 20, "bold"))
 etiqueta_titulo.pack(fill = tkinter.X, pady = 10)
 
-def saludo():
-    print("Hola")
-
-
 # Creación de Botones para funciones principales
 #Botón para agregar tareas
 boton_agregar = tkinter.Button(ventana,
