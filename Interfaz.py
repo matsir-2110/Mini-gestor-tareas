@@ -1,10 +1,11 @@
+# ---LA INTERFAZ ESTA EN PROCESO---
 import tkinter
 
 # Ventana tk
 ventana = tkinter.Tk()
 ventana.geometry("650x425")
 
-# Creación de título como label
+# Título en forma de label
 etiqueta_titulo = tkinter.Label(ventana, 
                                 text = "MENÚ GESTOR DE TAREAS",
                                 bg = "SlateGray4",
@@ -12,7 +13,12 @@ etiqueta_titulo = tkinter.Label(ventana,
                                 font = ("Arial", 20, "bold"))
 etiqueta_titulo.pack(fill = tkinter.X, pady = 10)
 
+def saludo():
+    print("Hola")
+
+
 # Creación de Botones para funciones principales
+#Botón para agregar tareas
 boton_agregar = tkinter.Button(ventana,
                                text = "Agregar",
                                font = ("Arial", 12, "bold"),
@@ -22,6 +28,7 @@ boton_agregar = tkinter.Button(ventana,
                                activebackground = "DarkSeaGreen4")
 boton_agregar.pack(pady = 15)
 
+#Botón para cambiar estado de tareas
 boton_estado = tkinter.Button(ventana,
                               text = "Cambiar Estado",
                               font = ("Arial", 12, "bold"),
@@ -31,6 +38,7 @@ boton_estado = tkinter.Button(ventana,
                               activebackground = "DarkSeaGreen4")
 boton_estado.pack(pady = 15)
 
+#Botón para eliminar tareas
 boton_eliminar = tkinter.Button(ventana,
                                 text = "Eliminar",
                                 font = ("Arial", 12, "bold"),
@@ -40,6 +48,7 @@ boton_eliminar = tkinter.Button(ventana,
                                 activebackground = "DarkSeaGreen4")
 boton_eliminar.pack(pady = 15)
 
+#Botón para ver todas las tareas
 boton_vista = tkinter.Button(ventana,
                              text = "Ver tareas",
                              font = ("Arial", 12, "bold"),
