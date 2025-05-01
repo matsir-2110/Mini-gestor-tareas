@@ -1,10 +1,19 @@
 # Diccionario con tareas previamente escritas
 tarea = {
-    1: {"Tarea": "Estudiar para los parciales de la semana que viene", "Descripcion": "", "Completada": "Pendiente"},
-    2: {"Tarea": "Ir al gimnasio todos los dias", "Descripcion": "", "Completada": "Pendiente"},
-    3: {"Tarea": "Leer libros 3 horas por dia", "Descripcion": "", "Completada": "Pendiente"},
-    4: {"Tarea": "Practicar tiros al arco de futbol", "Descripcion": "", "Completada": "Pendiente"}
+    1: {"Tarea": "Estudiar para los parciales de la semana que viene", "Descripcion": "", "Estado": "Pendiente"},
+    2: {"Tarea": "Ir al gimnasio todos los dias", "Descripcion": "", "Estado": "Pendiente"},
+    3: {"Tarea": "Leer libros 3 horas por dia", "Descripcion": "", "Estado": "Pendiente"},
+    4: {"Tarea": "Practicar tiros al arco de futbol", "Descripcion": "", "Estado": "Pendiente"}
 }
+
+# Imprimir las tareas escritas al inicio como referencia
+i = 1
+for i, datos in tarea.items():
+    print("TAREA NÚMERO: ", i)
+    print("Tarea: ", datos['Tarea'])
+    print("Descripción: ", datos['Descripcion'])
+    print("Estado: ", datos['Estado'])
+    print("")
 
 # Función para agregar tareas y descripciones 
 def agregado():
@@ -20,16 +29,24 @@ def agregado():
     while numero in tarea:
         numero += 1
     
-    tarea[numero] = {"texto": nueva_tarea, "descripcion": descripcion, "completada": "Pendiente"}
+    tarea[numero] = {"texto": nueva_tarea, "descripcion": descripcion, "Estado": "Pendiente"}
     print("Tarea agregada")
 
-#def marcado():
-    # Agregar prox
-
+# Función para cambiar el estado de las tareas
+def marcado():
+    opcion = input("Desea cambiar el estado de alguna tarea? ").lower()
+    if opcion == 'si':
+        opcion_n = int(input("¿Que tarea desea cambiar? "))
+        opcion_n2 = input("Elija COMPLETADO / PENDIENTE ")
+        tarea[opcion_n]['Estado'] = opcion_n2
+     
+# Función para eliminar alguna de las tareas
 def eliminado():
     opcion = input("¿Desea eliminar alguna tarea? ").lower()
     if opcion == 'si':
-        opcion_n = input("¿Que tarea desea eliminar?")
+        opcion_n = int(input("¿Que tarea desea eliminar? (1/2/3/etc)"))
+        tarea.pop(opcion_n)
+        print("Tarea eliminada")
 
 # Función para mostrar por pantalla la tarea, su descripción y estado
 def listado():
@@ -38,7 +55,7 @@ def listado():
         print("TAREA NÚMERO: ", i)
         print("Tarea: ", datos['Tarea'])
         print("Descripción: ", datos['Descripcion'])
-        print("Estado: ", datos['Completada'])
+        print("Estado: ", datos['Estado'])
         print("")
 
 #Función que muestra el menú de opciones
@@ -52,10 +69,10 @@ def menus():
 
     if menu == 'agregar':
         agregado()
-    #if menu == 'marcar':
-    #    marcado()
-    #if menu == 'eliminar':
-    #    eliminado()
+    if menu == 'marcar':
+        marcado()
+    if menu == 'eliminar':
+        eliminado()
     if menu == 'listado':
         listado()
 
